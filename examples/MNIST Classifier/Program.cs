@@ -62,7 +62,10 @@ class Program{
         Console.WriteLine();
         Console.Write("Do u wanna save? (y/n) : ");
         if (Console.ReadLine() != "n")
-            net.Serialize();
+        {
+            Console.Write("Name of DNA: ");
+            net.Serialize(Console.ReadLine()+"");
+        }
 
     }
     

@@ -175,11 +175,10 @@ namespace NeuralNetwork
             file.Close();
             return nn;
         }
-        public void Serialize()
+        public void Serialize(string loc)
         {
             System.Xml.Serialization.XmlSerializer writer = new(typeof(NeuralNet));
-            Console.WriteLine("Name of DNA: ");
-            string name = Console.ReadLine() + "";
+            string name = loc;
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"//" + name + ".dna";
             FileStream file = File.Create(path);
 
