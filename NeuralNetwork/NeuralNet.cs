@@ -82,7 +82,7 @@ namespace NeuralNetwork
             Matrix inputs = Matrix.fromArray(input_array);
             Matrix hidden = Matrix.multiply(weights_ih, inputs);
             hidden.add(bias_h);
-            // activation function!
+            // activation function
             hidden.map(activation);
 
             // Generating the output's output!
@@ -187,7 +187,6 @@ namespace NeuralNetwork
 
         }
 
-        // Adding function for neuro-evolution
         public NeuralNet copy()
         {
             return new NeuralNet(this);
@@ -207,7 +206,7 @@ namespace NeuralNetwork
             }
             return j;
         }
-        // Accept an arbitrary function for mutation
+
         public void mutate(Func<float, int, int, float> func)
         {
             weights_ih.map(func);
