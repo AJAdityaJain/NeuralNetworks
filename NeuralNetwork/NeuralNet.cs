@@ -1,4 +1,6 @@
 ﻿using NeuralNetworks;
+using System;
+using System.IO;
 
 namespace NeuralNetwork
 {
@@ -96,7 +98,7 @@ namespace NeuralNetwork
 
         public void setLearningRate(float learning_rate = 0.1f)
         {
-            learning_rate = learning_rate;
+            this.learning_rate = learning_rate;
         }
 
         public void train(float[] input_array, float[] target_array)
@@ -171,7 +173,7 @@ namespace NeuralNetwork
         {
             System.Xml.Serialization.XmlSerializer reader = new(typeof(NeuralNet));
             StreamReader file = new(loc);
-            NeuralNet? nn = (NeuralNet?)reader.Deserialize(file);
+            NeuralNet nn = (NeuralNet)reader.Deserialize(file);
             file.Close();
             return nn;
         }

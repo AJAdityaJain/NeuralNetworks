@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace NeuralNetworks
 {
@@ -198,7 +199,7 @@ namespace NeuralNetworks
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (data[i,j]> max)
+                    if (data[i, j] > max)
                     {
                         max = data[i, j];
                     }
